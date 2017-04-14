@@ -1,0 +1,501 @@
+[1]---------------------------------------------------------------------------
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv= "Content-Type" content="text/html;charset=UTF-8" />
+<meta name="Copyright" content="La Gym Su&eacute;doise (c) 2017" />
+<meta name="Publisher" content="La Gym Su&eacute;doise" />
+<meta name="language-v" content="french" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1026.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="google-site-verification" content="cvutRYU-r30L5p5TDsH77fFimrHcDRAnqkpeAAfadno">
+<link rel="Shortcut Icon" type="image/gif" href="https://design.gymsuedoise.com/USER20170406/favicon.gif" />
+<link rel="apple-touch-icon" href="https://design.gymsuedoise.com/USER20170406/apple-touch-icon.png" />
+<link rel="apple-touch-icon" sizes="57x57" href="https://design.gymsuedoise.com/USER20170406/apple-touch-icon-57x57.png" />
+<link rel="apple-touch-icon" sizes="72x72" href="https://design.gymsuedoise.com/USER20170406/apple-touch-icon-72x72.png" />
+<link rel="apple-touch-icon" sizes="114x114" href="https://design.gymsuedoise.com/USER20170406/apple-touch-icon-114x114.png" />
+<link rel="alternate" href="www.gymsuedoise.com" hreflang="fr-FR" />
+<link rel="stylesheet" href="https://design.gymsuedoise.com/USER20170406/css/user.css"><script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o), m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m) })(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create', 'UA-45247463-1', 'gymsuedoise.com');ga('require', 'displayfeatures');ga('send', 'pageview');
+</script>
+
+
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-PR8ZNF" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-PR8ZNF');</script>
+
+<title>Sport pour tous, Fitness, remise en forme, La Gym Su&eacute;doise</title>
+<meta name="description" content="D&eacute;couvrez un sport pour tous, retrouvez les salles de sport proche de chez vous, la Gym Su&eacute;doise un sport complet">
+</head>
+<body>
+<noscript><div id="nojserror"><p>Your browser doesn't support javascript or javascript is not activated.</p><p>This site requires javascript to display properly. We recommend to activate javascript or use an other browser.</p><p>We recommend to use the open source browser Firefox available here:</p><p><a href="http://www.mozilla.org"><img src="https://design.gymsuedoise.com/USER20170406/firefox.png" alt="firefox" /><br/>Get Firefox</a></p></div></noscript>
+
+
+<!-- Header -->
+<div class="SF201607-Header__container"><header class="sf-Header"><a class="sf-BtnHeader js-AccountLink" href="https://www.gymsuedoise.com/account/bv_h/?u=eed8" title="Acceder &agrave; mon compte">Hej Arturo!</a><div class="sf-Header__logoGS"><a class="sf-Header__link--logo" href="https://www.gymsuedoise.com/?u=eed8" title="La Gym Suédoise"></a></div><nav class="sf-NavBar">
+
+
+<!-- Navigation menu -->
+<ul class="sf-NavBar__group"><li class="sf-NavBar__item--first"><a class="sf-NavBar__link--first" href="https://www.gymsuedoise.com/content/display/?t=30&amp;u=eed8">la Gym Suédoise</a></li><li class="sf-NavBar__item"><a class="sf-NavBar__link" href="https://www.gymsuedoise.com/content/display/?t=30&amp;u=eed8" >Un sport sant&eacute;</a></li><li class="sf-NavBar__item"><hr class="sf-NavBar__item__border"><a class="sf-NavBar__link" href="https://www.gymsuedoise.com/content/display/?t=40&amp;u=eed8" >Qui sommes-nous ?</a></li><li class="sf-NavBar__item"><hr class="sf-NavBar__item__border"><a class="sf-NavBar__link" href="https://www.gymsuedoise.com/event/?u=eed8" >Nos actualit&eacute;s</a></li><li class="sf-NavBar__item"><hr class="sf-NavBar__item__border"><a class="sf-NavBar__link" href="https://www.gymsuedoise.com/content/rpdisplay/?u=eed8" >Revue de presse</a></li><li class="sf-NavBar__item"><hr class="sf-NavBar__item__border"><a class="sf-NavBar__link" href="https://www.gymsuedoise.com/member/list/?accountdisplayrole=-1&amp;u=eed8" >L'&eacute;quipe</a></li><li class="sf-NavBar__item"><hr class="sf-NavBar__item__border"><a class="sf-NavBar__link" href="https://www.gymsuedoise.com/content/display/?t=76&amp;u=eed8" >Se former</a></li><li class="sf-NavBar__item"><hr class="sf-NavBar__item__border"><a class="sf-NavBar__link" href="https://www.gymsuedoise.com/content/display/?t=77&amp;u=eed8" >Nous rejoindre</a></li><li class="sf-NavBar__item"><hr class="sf-NavBar__item__border"><a class="sf-NavBar__link" href="https://www.gymsuedoise.com/content/display/?t=79&amp;u=eed8" >Nos partenaires</a></li></ul>
+<ul class="sf-NavBar__group sf-NavBar__group--2">
+<li class="sf-NavBar__item--first"><a class="sf-NavBar__link--first" href="https://www.gymsuedoise.com/cours/list/?u=eed8">Le planning</a></li><li class="sf-NavBar__item"><a class="sf-NavBar__link"  href="https://www.gymsuedoise.com/cours/list/?u=eed8" >Horaires</a></li><li class="sf-NavBar__item"><hr class="sf-NavBar__item__border"><a class="sf-NavBar__link"  href="https://www.gymsuedoise.com/loc/li/?u=eed8" >Salles</a></li><li class="sf-NavBar__item"><hr class="sf-NavBar__item__border"><a class="sf-NavBar__link"  href="https://www.gymsuedoise.com/content/display/?t=80&amp;u=eed8" >Intensit&eacute;s</a></li></ul>
+<ul class="sf-NavBar__group sf-NavBar__group--3">
+<li class="sf-NavBar__item--first"><a class="sf-NavBar__link--first" href="https://www.gymsuedoise.com/content/display/?t=890&amp;u=eed8">Participer</a></li><li class="sf-NavBar__item"><a class="sf-NavBar__link" href="https://www.gymsuedoise.com/content/display/?t=890&amp;u=eed8" >Comment participer</a></li><li class="sf-NavBar__item"><hr class="sf-NavBar__item__border"><a class="sf-NavBar__link" href="https://www.gymsuedoise.com/pass/li/?u=eed8" >Notre offre</a></li><li class="sf-NavBar__item"><hr class="sf-NavBar__item__border"><a class="sf-NavBar__link" href="https://www.gymsuedoise.com/content/display/?t=78&amp;u=eed8" >Cartes cadeaux</a></li><li class="sf-NavBar__item"><hr class="sf-NavBar__item__border"><a class="sf-NavBar__link" href="https://www.gymsuedoise.com/content/display/?t=100&amp;u=eed8" >Cours gratuits</a></li><li class="sf-NavBar__item"><hr class="sf-NavBar__item__border"><a class="sf-NavBar__link" href="https://www.gymsuedoise.com/content/display/?t=95&amp;u=eed8" >Offre CE</a></li></ul>
+<ul class="sf-NavBar__group sf-NavBar__group--4">
+<li class="sf-NavBar__item--first"><a class="sf-NavBar__link--first" href="https://www.gymsuedoise.com/content/display/?t=111&amp;u=eed8">Questions</a></li><li class="sf-NavBar__item"><a class="sf-NavBar__link" href="https://www.gymsuedoise.com/content/display/?t=111&amp;u=eed8" >Nos r&eacute;ponses</a></li><li class="sf-NavBar__item"><hr class="sf-NavBar__item__border"><a class="sf-NavBar__link" href="https://www.gymsuedoise.com/content/display/?t=120&amp;u=eed8" >Nous contacter</a></li></ul>
+<div class="sf-NavBar__tools__wrapper">
+
+<!-- SEARCH BOX -->
+<div class="sf-NavBar__search" style="width: 32px;"><a id="quick-search__open" href="javascript:void(0);" title="Rechercher" style="display: block;"></a><form method="post" action="https://www.gymsuedoise.com/search/s/?u=eed8"><div><input type="hidden" name="sv" value="searchhv"><input type="text" id="quick-search__input" placeholder="Rechercher" name="sc" ><input type="submit" id="quick-search__submit" value="Lancer la recherche" ></div></form></div>
+
+<!-- Navigation menu -->
+<a class="js-BtnAccount sf-Btn--account" href="https://www.gymsuedoise.com/account/bv_h/?u=eed8" title="Acceder &agrave; mon compte"></a><ul class="js-AccountOverlay sf-AccountBox"><li><a class="sf-AccountBox__link" href="https://www.gymsuedoise.com/account/bv_h/?u=eed8">mon compte</a></li><li><hr class="sf-NavBar__item__border"><a class="sf-AccountBox__link" href="https://www.gymsuedoise.com/lt/?u=eed8">me déconnecter</a></li></ul>
+<a class="sf-Btn__subscribe" href="https://www.gymsuedoise.com/pass/li/?u=eed8" title="D&eacute;couvrir nos offres" style="display: block;">je m'abonne</a></div>
+</nav></header></div>
+
+<div id="main-content">
+
+<div class="msg-box msg-ack"><p><span></span>Vous &ecirc;tes maintenant connect&eacute;(e) &agrave; votre compte. Utilisez les rubriques ci-dessous pour g&eacute;rer votre vie de membre de la Gym Su&eacute;doise.</p></div>
+<h2 class="sf-ClientRoute__title">Mon <strong>compte</strong></h2><ul class="sf-MyAccount__router"><li><a href="https://www.gymsuedoise.com/account/bv_h/?u=eed8" title="Voir la synth&egrave;se de mon compte" class="sf-Picto__home active"></a></li></ul><div class="sf-MyAccount__container sf-Background__wood sf-Text__md__light"><div class="sf-MyAccount__box__container">
+<div class="sf-MyAccount__box"><h2 class="sf-MyAccount__box__title">mes forfaits en cours</h2><div class="sf-MyAccount__box__content"><div class="sf-MyAccount__membership__left"><img src="https://design.gymsuedoise.com/USER20170406/pass/color_topp.gif" alt="TOPP" title="TOPP"  style="margin-right:2px;"  /></div><div class="sf-MyAccount__membership__right"><h3>TOPP 1 an</h3><p>Valable jusqu'au lundi 06 novembre 2017</p></div><br/><a href="https://www.gymsuedoise.com/cart/fv/?u=eed8">Voir le d&eacute;tail de mes forfaits en cours de validit&eacute;</a></div></div>
+<div class="sf-MyAccount__box"><h2 class="sf-MyAccount__box__title">Mes forfaits / bons</h2><div class="sf-MyAccount__box__content"><h3>Mes commandes</h3><a href="https://www.gymsuedoise.com/pass/li/?u=eed8" >Commander un nouveau forfait</a><br/><a href="https://www.gymsuedoise.com/cart/hi/?u=eed8">Historique de mes commandes (et factures)</a><h3>Bons & avoirs</h3><a href="https://www.gymsuedoise.com/coupons/li/?u=eed8">Utiliser un bon cadeau, un bon de r&eacute;duction ou bon CE</a>
+</div></div></div><div class="sf-MyAccount__box__container">
+<div class="sf-MyAccount__box"><h2 class="sf-MyAccount__box__title">Mes donn&eacute;es</h2><div class="sf-MyAccount__box__content"><a href="https://www.gymsuedoise.com/account/cp/?u=eed8" class="sf-Margin__top__15">Modifier mon mot de passe</a><a href="https://www.gymsuedoise.com/account/cu/?u=eed8">Modifier mes donn&eacute;es personnelles</a><a href="https://www.gymsuedoise.com/account/cpct/?u=eed8">Modifier ma photo</a><a href="https://www.gymsuedoise.com/account/cd/?u=eed8">Modifier ma r&eacute;gion favorite</a><a href="https://www.gymsuedoise.com/psp/li/?u=eed8">Modifier mes moyens de paiements</a><a href="https://www.gymsuedoise.com/account/cl/?u=eed8">Supprimer mon compte</a></div></div>
+<div class="sf-MyAccount__box"><h2 class="sf-MyAccount__box__title">mon planning / mes réservations</h2><div class="sf-MyAccount__box__content"><h3>Mon planning personnalisé</h3><a href="https://www.gymsuedoise.com/pl/gt/?u=eed8">Cr&eacute;er / Modifier mon planning personnalis&eacute;</a><h3>Mes réservations</h3><p>Vous n'avez aucune r&eacute;servation pour aujourd'hui.</p><a href="https://www.gymsuedoise.com/cours/wresa/?u=eed8">Voir les cours ouverts &agrave; la r&eacute;servation</a><a href="https://www.gymsuedoise.com/resa/hi/?u=eed8">Historique de mes r&eacute;servations</a><a href="https://www.gymsuedoise.com/resa/hl/?u=eed8">Historique de mes commandes de l'Option R&eacute;servation</a></div></div></div></div><div class="sf-BoxShadow__outset"></div><div class="sf-MyAccount__footer"><h2 class="sf-ClientRoute__title">une <strong>question ?</strong> un <strong>problème</strong> ?</h2><p class="sf-MyAccount__infoText sf-Text__md__light al-center">Si les réponses proposées ici ne correspondent pas à vos attentes, veuillez transmettre votre question par mail à <a href="mailto:contact@gymsuedoise.com" class="bb-email">contact@gymsuedoise.com</a> ou par téléphone au 01 45 00 18 22.<br class="bb-br" /><br class="bb-br" />Vous pouvez aussi consulter les Questions / Réponses ou utiliser le moteur de recherche situés dans la barre de navigation du site.</p></div></div> <!-- END main-content -->
+
+<div class="SF201607-Footer__container sf-Background__one"><footer class="sf-Footer">
+<h2 class="sf-Footer__title--white">la gym suédoise</h2>
+<p class="sf-Footer__text--white">La <a class="sf-Footer__link" href="https://www.gymsuedoise.com/content/display/?t=30&amp;u=eed8">Gym Su&eacute;doise</a>, la Gym pour tous : d&eacute;couvrez nos <a class="sf-Footer__link" href="https://www.gymsuedoise.com/cours/list/?u=eed8">cours</a>, nos <a class="sf-Footer__link" href="https://www.gymsuedoise.com/loc/li/?u=eed8">salles</a> et nos <a class="sf-Footer__link" href="https://www.gymsuedoise.com/content/display/?t=80&amp;u=eed8">intensit&eacute;s</a>.</p>
+<p class="sf-Footer__phoneNumber">01 45 00 18 22</p><p class="sf-Footer__container--link"><a class="sf-Footer__link sf-uppercase" href="https://www.gymsuedoise.com/content/display/?t=140&amp;u=eed8">Mentions l&eacute;gales</a> / <a class="sf-Footer__link sf-uppercase" href="https://www.gymsuedoise.com/content/display/?t=130&amp;u=eed8">CGU</a> / <a class="sf-Footer__link sf-uppercase" href="https://www.gymsuedoise.com/content/display/?t=170&amp;u=eed8" >CGV</a></p><p class="sf-Footer__text--lightBlue">Copyright © 1993-2017 La Gym Su&eacute;doise®&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;&nbsp;VR1771 (2017-04-01) - 0,05s - P23S23</p><p class="sf-Footer__text--lightBlue">La Gym Su&eacute;doise, sport complet, id&eacute;al pour se d&eacute;penser et pour de la <a class="sf-Footer__link--light" href="https://www.gymsuedoise.com/event/remise-en-forme/?u=eed8">remise en forme</a>. Adapt&eacute;e &agrave; tous avec <a class="sf-Footer__link--light" href="https://www.gymsuedoise.com/content/display/?t=80&amp;u=eed8">15 intensit&eacute;s diff&eacute;rentes</a>, une multitude de <a class="sf-Footer__link--light" href="https://www.gymsuedoise.com/loc/mpl/?u=eed8">salles</a> et des <a class="sf-Footer__link--light" href="https://www.gymsuedoise.com/member/list/?accountdisplayrole=40&amp;u=eed8">animateurs motiv&eacute;s</a> &agrave; votre &eacute;coute. <a class="sf-Footer__link--light" href="https://www.gymsuedoise.com/event/salles-sports-paris/?u=eed8">Salles de sport &agrave; Paris</a>, Cours de <a class="sf-Footer__link--light" href="https://www.gymsuedoise.com/event/cours-gym-marseille/?u=eed8">Gym &agrave; Marseille</a>, <a class="sf-Footer__link--light" href="https://www.gymsuedoise.com/event/fitness-boulogne/?u=eed8">Fitness à Boulogne</a> ou &agrave; <a class="sf-Footer__link--light" href="http://www.swedishfit.com">l'&eacute;tranger</a>, o&ugrave; que vous soyez, pratiquez un sport <a class="sf-Footer__link--light" href="https://www.gymsuedoise.com/event/sport-accessible-pas-cher/?u=eed8">accessible et pas cher</a>.</p></footer></div><script src="https://design.gymsuedoise.com/USER20170406/js/app.js"></script>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"b841c318da","applicationID":"45865848","transactionName":"Z1NUNkFTD0ZWUkBfC14ZYxBaHQhbU1RMGBRYRg==","queueTime":0,"applicationTime":47,"atts":"SxRXQAlJHEg=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>
+
+[FINDID]---------------------------------------------------------------------------
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv= "Content-Type" content="text/html;charset=UTF-8" />
+<meta name="Copyright" content="La Gym Su&eacute;doise (c) 2017" />
+<meta name="Publisher" content="La Gym Su&eacute;doise" />
+<meta name="language-v" content="french" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1026.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="google-site-verification" content="cvutRYU-r30L5p5TDsH77fFimrHcDRAnqkpeAAfadno">
+<link rel="Shortcut Icon" type="image/gif" href="https://design.gymsuedoise.com/USER20170406/favicon.gif" />
+<link rel="apple-touch-icon" href="https://design.gymsuedoise.com/USER20170406/apple-touch-icon.png" />
+<link rel="apple-touch-icon" sizes="57x57" href="https://design.gymsuedoise.com/USER20170406/apple-touch-icon-57x57.png" />
+<link rel="apple-touch-icon" sizes="72x72" href="https://design.gymsuedoise.com/USER20170406/apple-touch-icon-72x72.png" />
+<link rel="apple-touch-icon" sizes="114x114" href="https://design.gymsuedoise.com/USER20170406/apple-touch-icon-114x114.png" />
+<link rel="alternate" href="www.gymsuedoise.com" hreflang="fr-FR" />
+<link rel="stylesheet" href="https://design.gymsuedoise.com/USER20170406/css/user.css"><script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o), m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m) })(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create', 'UA-45247463-1', 'gymsuedoise.com');ga('require', 'displayfeatures');ga('send', 'pageview');
+</script>
+
+
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-PR8ZNF" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-PR8ZNF');</script>
+
+<title>Tous les horaires des cours de Gym Su&eacute;doise</title>
+<meta name="description" content="Retrouvez tous les horaires des cours de Gym Su&eacute;doise, salles de sport proches de chez vous, fitness et remise en forme">
+</head>
+<body>
+<noscript><div id="nojserror"><p>Your browser doesn't support javascript or javascript is not activated.</p><p>This site requires javascript to display properly. We recommend to activate javascript or use an other browser.</p><p>We recommend to use the open source browser Firefox available here:</p><p><a href="http://www.mozilla.org"><img src="https://design.gymsuedoise.com/USER20170406/firefox.png" alt="firefox" /><br/>Get Firefox</a></p></div></noscript>
+
+
+<!-- Header -->
+<div class="SF201607-Header__container"><header class="sf-Header"><a class="sf-BtnHeader js-AccountLink" href="https://www.gymsuedoise.com/account/bv_h/" title="Acceder &agrave; mon compte">Hej Arturo!</a><div class="sf-Header__logoGS"><a class="sf-Header__link--logo" href="https://www.gymsuedoise.com/" title="La Gym Suédoise"></a></div><nav class="sf-NavBar">
+
+
+<!-- Navigation menu -->
+<ul class="sf-NavBar__group"><li class="sf-NavBar__item--first"><a class="sf-NavBar__link--first" href="https://www.gymsuedoise.com/content/display/?t=30">la Gym Suédoise</a></li><li class="sf-NavBar__item"><a class="sf-NavBar__link" href="https://www.gymsuedoise.com/content/display/?t=30" >Un sport sant&eacute;</a></li><li class="sf-NavBar__item"><hr class="sf-NavBar__item__border"><a class="sf-NavBar__link" href="https://www.gymsuedoise.com/content/display/?t=40" >Qui sommes-nous ?</a></li><li class="sf-NavBar__item"><hr class="sf-NavBar__item__border"><a class="sf-NavBar__link" href="https://www.gymsuedoise.com/event/" >Nos actualit&eacute;s</a></li><li class="sf-NavBar__item"><hr class="sf-NavBar__item__border"><a class="sf-NavBar__link" href="https://www.gymsuedoise.com/content/rpdisplay/" >Revue de presse</a></li><li class="sf-NavBar__item"><hr class="sf-NavBar__item__border"><a class="sf-NavBar__link" href="https://www.gymsuedoise.com/member/list/?accountdisplayrole=-1" >L'&eacute;quipe</a></li><li class="sf-NavBar__item"><hr class="sf-NavBar__item__border"><a class="sf-NavBar__link" href="https://www.gymsuedoise.com/content/display/?t=76" >Se former</a></li><li class="sf-NavBar__item"><hr class="sf-NavBar__item__border"><a class="sf-NavBar__link" href="https://www.gymsuedoise.com/content/display/?t=77" >Nous rejoindre</a></li><li class="sf-NavBar__item"><hr class="sf-NavBar__item__border"><a class="sf-NavBar__link" href="https://www.gymsuedoise.com/content/display/?t=79" >Nos partenaires</a></li></ul>
+<ul class="sf-NavBar__group sf-NavBar__group--2">
+<li class="sf-NavBar__item--first"><a class="sf-NavBar__link--first" href="https://www.gymsuedoise.com/cours/list/">Le planning</a></li><li class="sf-NavBar__item"><a class="sf-NavBar__link"  href="https://www.gymsuedoise.com/cours/list/" >Horaires</a></li><li class="sf-NavBar__item"><hr class="sf-NavBar__item__border"><a class="sf-NavBar__link"  href="https://www.gymsuedoise.com/loc/li/" >Salles</a></li><li class="sf-NavBar__item"><hr class="sf-NavBar__item__border"><a class="sf-NavBar__link"  href="https://www.gymsuedoise.com/content/display/?t=80" >Intensit&eacute;s</a></li></ul>
+<ul class="sf-NavBar__group sf-NavBar__group--3">
+<li class="sf-NavBar__item--first"><a class="sf-NavBar__link--first" href="https://www.gymsuedoise.com/content/display/?t=890">Participer</a></li><li class="sf-NavBar__item"><a class="sf-NavBar__link" href="https://www.gymsuedoise.com/content/display/?t=890" >Comment participer</a></li><li class="sf-NavBar__item"><hr class="sf-NavBar__item__border"><a class="sf-NavBar__link" href="https://www.gymsuedoise.com/pass/li/" >Notre offre</a></li><li class="sf-NavBar__item"><hr class="sf-NavBar__item__border"><a class="sf-NavBar__link" href="https://www.gymsuedoise.com/content/display/?t=78" >Cartes cadeaux</a></li><li class="sf-NavBar__item"><hr class="sf-NavBar__item__border"><a class="sf-NavBar__link" href="https://www.gymsuedoise.com/content/display/?t=100" >Cours gratuits</a></li><li class="sf-NavBar__item"><hr class="sf-NavBar__item__border"><a class="sf-NavBar__link" href="https://www.gymsuedoise.com/content/display/?t=95" >Offre CE</a></li></ul>
+<ul class="sf-NavBar__group sf-NavBar__group--4">
+<li class="sf-NavBar__item--first"><a class="sf-NavBar__link--first" href="https://www.gymsuedoise.com/content/display/?t=111">Questions</a></li><li class="sf-NavBar__item"><a class="sf-NavBar__link" href="https://www.gymsuedoise.com/content/display/?t=111" >Nos r&eacute;ponses</a></li><li class="sf-NavBar__item"><hr class="sf-NavBar__item__border"><a class="sf-NavBar__link" href="https://www.gymsuedoise.com/content/display/?t=120" >Nous contacter</a></li></ul>
+<div class="sf-NavBar__tools__wrapper">
+
+<!-- SEARCH BOX -->
+<div class="sf-NavBar__search" style="width: 32px;"><a id="quick-search__open" href="javascript:void(0);" title="Rechercher" style="display: block;"></a><form method="post" action="https://www.gymsuedoise.com/search/s/"><div><input type="hidden" name="sv" value="searchhv"><input type="text" id="quick-search__input" placeholder="Rechercher" name="sc" ><input type="submit" id="quick-search__submit" value="Lancer la recherche" ></div></form></div>
+
+<!-- Navigation menu -->
+<a class="js-BtnAccount sf-Btn--account" href="https://www.gymsuedoise.com/account/bv_h/" title="Acceder &agrave; mon compte"></a><ul class="js-AccountOverlay sf-AccountBox"><li><a class="sf-AccountBox__link" href="https://www.gymsuedoise.com/account/bv_h/">mon compte</a></li><li><hr class="sf-NavBar__item__border"><a class="sf-AccountBox__link" href="https://www.gymsuedoise.com/lt/">me déconnecter</a></li></ul>
+<a class="sf-Btn__subscribe" href="https://www.gymsuedoise.com/pass/li/" title="D&eacute;couvrir nos offres" style="display: block;">je m'abonne</a></div>
+</nav></header></div>
+
+<div id="main-content">
+<div class="rounded-box yellow-box schedule-form-wrapper"><div class="inner"><form class="schedule-form" name="schedule-form" id="schedule-form" method="post" action="https://www.gymsuedoise.com/cours/list/"><input type="hidden" name="class_user_search_recover" value="165233376">
+<p class="form-description first-column">D&eacute;couvrez<br>les horaires<br>de votre r&eacute;gion</p><ul class="second-column"><li><select class="Greyselect" name="class_search_regionid" title="Vous pouvez filtrer par r&eacute;gion"  onchange="this.form.submit();" >
+<option value="-1" selected="selected" >Toutes les r&eacute;gions</option>
+<option value="68" >Alpes-Maritimes</option>
+<option value="71" >Alsace</option>
+<option value="77" >Champagne-Ardenne</option>
+<option value="58" >Essonne</option>
+<option value="64" >Gironde</option>
+<option value="65" >Haute-Garonne</option>
+<option value="54" >Hauts de Seine</option>
+<option value="60" >Ile de France</option>
+<option value="61" >Ille-et-Vilaine</option>
+<option value="66" >Languedoc-Roussillon</option>
+<option value="62" >Loire-Atlantique</option>
+<option value="72" >Nord</option>
+<option value="73" >Normandie</option>
+<option value="78" >Paris Banlieue Sud</option>
+<option value="53" >Paris Intra Muros</option>
+<option value="51" >Paris Rive Droite</option>
+<option value="52" >Paris Rive Gauche</option>
+<option value="63" >Poitou-Charentes</option>
+<option value="67" >Provence</option>
+<option value="69" >Rhône</option>
+<option value="59" >Seine Saint Denis</option>
+<option value="56" >Val de Marne</option>
+<option value="55" >Yvelines</option>
+</select>
+</li><li><select name="class_search_day" title="Filtrer sur les jours de la semaine"  onchange="this.form.submit();" >
+<option value="-3" >Tous les jours</option>
+<option value="-2" >Aujourd'hui</option>
+<option value="-1" >Demain</option>
+<option value="0" >Lundi</option>
+<option value="1" selected="selected" >Mardi</option>
+<option value="2" >Mercredi</option>
+<option value="3" >Jeudi</option>
+<option value="4" >Vendredi</option>
+<option value="5" >Samedi</option>
+<option value="6" >Dimanche</option>
+</select>
+</li><li><select name="class_search_level" title="Filtrer sur l'intensit&eacute; de cours" onchange="this.form.submit();">
+<option value="-2" >Toutes les intensit&eacute;s</option>
+<option value="20" >Standard Soft</option>
+<option value="30" >Standard</option>
+<option value="31" >75'</option>
+<option value="40" >Intensif</option>
+<option value="45" >Cardio Flex</option>
+<option value="46" selected="selected" >Cardio Pump</option>
+<option value="47" >Circuit</option>
+<option value="49" >Running</option>
+<option value="50" >Mod&eacute;r&eacute;</option>
+<option value="60" >Famille</option>
+<option value="65" >Clubbing</option>
+<option value="67" >Dance</option>
+<option value="75" >Yoga</option>
+<option value="95" >Core</option>
+<option value="96" >Flex</option>
+<option value="97" >Autre</option>
+</select>
+</li><li><select  class="1"  name="class_search_passcolor" title="Filtrer sur la couleur de votre forfait" onchange="this.form.submit();">
+<option value="-1" selected="selected" >Tous les forfaits</option>
+<option value="0" >Gratuit</option>
+<option value="70" >TOPP</option>
+<option value="60" >EKO</option>
+<option value="40" >Vert</option>
+<option value="30" >Bleu</option>
+<option value="20" >Jaune</option>
+<option value="10" >Blanc</option>
+</select>
+</li></ul><ul class="third-column"><li><select class="Greyselect" name="class_search_locationid" title="Filtrer sur la salle"  onchange="this.form.submit();" >
+<option value="-1" >Toutes les salles</option>
+<option value="220" >Aix Creps</option>
+<option value="155" >Aix Daudet</option>
+<option value="230" >Aix Sacré Coeur</option>
+<option value="459" >Aix-la Duranne Vinci</option>
+<option value="199" >Aix-Les Milles Roumanille</option>
+<option value="556" >Antony Descartes</option>
+<option value="570" >Artigues Grange Bétailhe</option>
+<option value="447" >Artigues petit Dojo</option>
+<option value="633" >Asnières Assia El Hannouni</option>
+<option value="566" >Asnières Bruyères</option>
+<option value="471" >Asnières Gustave Baguer</option>
+<option value="567" >Boersch centre Sportif</option>
+<option value="225" >Bordeaux - Mérignac Jules Ferry</option>
+<option value="470" >Bordeaux Caudéran Stéhélin</option>
+<option value="218" >Bordeaux CCPA</option>
+<option value="515" >Bordeaux Chauffour</option>
+<option value="217" >Bordeaux ElleFit</option>
+<option value="684" >Bordeaux-Mérignac ESPE Bourran</option>
+<option value="288" >Bordeaux-Mérignac R Brettes</option>
+<option value="135" >Boulogne Carnot</option>
+<option value="25" >Boulogne Denfert Rochereau</option>
+<option value="38" >Boulogne rue de Paris</option>
+<option value="260" >Carrières Alouettes</option>
+<option value="259" >Carrières Plants de Catelaine</option>
+<option value="279" >Clichy Espace Henri Miller</option>
+<option value="227" >Clichy Mairie de Clichy</option>
+<option value="31" >Colombes Buffon</option>
+<option value="360" >Courbevoie 112 Carats</option>
+<option value="98" >Créteil Pyramide</option>
+<option value="358" >Créteil Simone de Beauvoir</option>
+<option value="468" >Deauville POM'S</option>
+<option value="335" >Dinard Michelet</option>
+<option value="668" >Fontenay-sous-Bois Espace Inter-g</option>
+<option value="522" >Fresnes Barbara</option>
+<option value="479" >Illkirch St Symphorien</option>
+<option value="214" >Joinville le pont - Emile lecuirot</option>
+<option value="117" >Joinville-le-pont Pierre françois</option>
+<option value="104" >Le Pecq - Sites Cours Famille</option>
+<option value="125" >Le Pecq Général Leclerc</option>
+<option value="261" >Le Pecq Jean Moulin</option>
+<option value="76" >Le Pecq Villeneuve</option>
+<option value="663" >Le Perreux sur Marne Bellevue</option>
+<option value="539" >Le Perreux sur Marne de Gaulle</option>
+<option value="666" >Les Mesnuls Salle des Fêtes</option>
+<option value="436" >Lille Croquet</option>
+<option value="653" >Lille Jean Zay</option>
+<option value="517" >Lyon 1 BB CLUB</option>
+<option value="478" >Lyon 2 Chevreul</option>
+<option value="54" >Lyon 2 Condé</option>
+<option value="138" >Lyon 3 Baraban</option>
+<option value="650" >Lyon 4 Maison Polyvalente</option>
+<option value="648" >Lyon 7 Bon Lait</option>
+<option value="394" >Lyon 7 Rosset</option>
+<option value="678" >Lyon 8 Combe Blanche</option>
+<option value="649" >Lyon 8 MJC Monplaisir</option>
+<option value="343" >Lyon 9 Campus Sport</option>
+<option value="205" >Marseille 12 Tillion</option>
+<option value="195" >Marseille 2 Leca</option>
+<option value="449" >Marseille 6 Paradis</option>
+<option value="96" >Marseille 7 les Lices</option>
+<option value="301" >Marseille 8 Azoulay</option>
+<option value="563" >Marseille 8 Bonnefon</option>
+<option value="120" >Marseille 8 Le Toit du Corbusier</option>
+<option value="136" >Marseille 8 Parc Borély</option>
+<option value="106" >Marseille 8 Parc de Bagatelle</option>
+<option value="216" >Marseille 8 Saints Anges</option>
+<option value="590" >Massy Espace Liberté</option>
+<option value="532" >Massy Leonard de Vinci</option>
+<option value="665" >Montfort l'Amaury Rue de Paris</option>
+<option value="651" >Montpellier I.T.E.P. Bourneville</option>
+<option value="65" >Montpellier Babote</option>
+<option value="333" >Montpellier Bassin Jacques Coeur</option>
+<option value="465" >Montpellier Fontcarrade</option>
+<option value="597" >Montreuil Arthur Ashe</option>
+<option value="571" >Montreuil Fitness Park</option>
+<option value="599" >Montreuil Le Chantier</option>
+<option value="598" >Montreuil Maison Pop</option>
+<option value="207" >Montrouge Alisé Danse</option>
+<option value="146" >Nantes Gigant</option>
+<option value="336" >Nantes Les Bourdonnières</option>
+<option value="208" >Nantes Lycée St Stanislas</option>
+<option value="163" >Nantes Noe Lambert</option>
+<option value="80" >Neuilly Centre Aquatique</option>
+<option value="14" >Neuilly Saint James</option>
+<option value="23" >Neuilly Saint Pierre</option>
+<option value="82" >Nice Danalys</option>
+<option value="643" >Nice Five Stars Valrose</option>
+<option value="151" >Nice Garibaldi</option>
+<option value="231" >Nice Notre Dame</option>
+<option value="271" >Nice Saint Roch</option>
+<option value="533" >Nogent sur Marne Centre sportif</option>
+<option value="612" >Pantin ASPTT</option>
+<option value="51" >Paris 2 Montorgueil</option>
+<option value="391" >Paris 3 Carreau du Temple</option>
+<option value="10" >Paris 3 Saint Martin</option>
+<option value="347" >Paris 4 Beaubourg</option>
+<option value="4" >Paris 4 Hôtel de Ville</option>
+<option value="626" >Paris 5 Jussieu Jean Talbot</option>
+<option value="646" >Paris 5 Maison des Mines</option>
+<option value="450" >Paris 5 Patriarches</option>
+<option value="680" >Paris 5 Raymond Queneau</option>
+<option value="7" >Paris 6 Stanislas</option>
+<option value="8" >Paris 7 Camou</option>
+<option value="37" >Paris 7 Cler</option>
+<option value="6" >Paris 7 Saint Jean</option>
+<option value="423" >Paris 8 Beaujon</option>
+<option value="32" >Paris 8 Roquépine</option>
+<option value="272" >Paris 8 Saint Philippe</option>
+<option value="1" >Paris 9 Bergère</option>
+<option value="9" >Paris 9 Grange Batelière</option>
+<option value="583" >Paris 9 Liège</option>
+<option value="438" >Paris 9 Tour d'Auvergne</option>
+<option value="440" >Paris 9 Tour des Dames</option>
+<option value="35" >Paris 10 Château Landon</option>
+<option value="349" selected="selected" >Paris 10 Chaudron</option>
+<option value="61" >Paris 10 Le Globo</option>
+<option value="153" >Paris 11 AEPP</option>
+<option value="431" >Paris 11 Cour des Lions</option>
+<option value="577" >Paris 11 Freeness Charonne</option>
+<option value="524" >Paris 11 Let's play family</option>
+<option value="523" >Paris 11 Maurice Berlemont</option>
+<option value="457" >Paris 11 One Step</option>
+<option value="12" >Paris 12 ASPTT Bastille</option>
+<option value="430" >Paris 12 Bercy</option>
+<option value="627" >Paris 12 Gymnase Reuilly</option>
+<option value="670" >Paris 12 Magic Form Daumesnil</option>
+<option value="17" >Paris 13 Blanqui</option>
+<option value="685" >Paris 13 Charles Fourier</option>
+<option value="351" >Paris 13 Flaubert</option>
+<option value="15" >Paris 13 Glacière</option>
+<option value="16" >Paris 13 Rentiers</option>
+<option value="100" >Paris 13 Stadium</option>
+<option value="13" >Paris 13 Thomas Mann</option>
+<option value="393" >Paris 13 Université Diderot</option>
+<option value="64" >Paris 14 Alice Milliat</option>
+<option value="641" >Paris 14 Cité Universitaire</option>
+<option value="58" >Paris 14 Rosa Parks</option>
+<option value="102" >Paris 15 Beaugrenelle-C3B</option>
+<option value="200" >Paris 15 Croix Nivert</option>
+<option value="93" >Paris 15 Keller</option>
+<option value="97" >Paris 15 Mont Tonnerre</option>
+<option value="687" >Paris 15 Salon du Running</option>
+<option value="236" >Paris 16 Auteuil</option>
+<option value="42" >Paris 16 Lauriston</option>
+<option value="18" >Paris 16 Passy</option>
+<option value="22" >Paris 17 Biancotto</option>
+<option value="21" >Paris 17 Courcelles</option>
+<option value="19" >Paris 17 Reims</option>
+<option value="87" >Paris 18 Barbès-Boris Vian</option>
+<option value="521" >Paris 18 Cité Véron</option>
+<option value="432" >Paris 18 Les Amiraux</option>
+<option value="433" >Paris 18 Ostermeyer</option>
+<option value="36" >Paris 19 Bolivar</option>
+<option value="493" >Paris 19 Macdonald</option>
+<option value="128" >Paris 19 Place des Fêtes</option>
+<option value="55" >Paris 20 Gambetta</option>
+<option value="659" >Paris 20 Juste Debout</option>
+<option value="409" >Paris 20 My Fitness Studio</option>
+<option value="66" >Paris 20 Nakache</option>
+<option value="576" >Paris 20 Nation</option>
+<option value="119" >Paris 20 Orteaux</option>
+<option value="234" >Paris 20 Pelleport</option>
+<option value="624" >Paris 20 Porte des Lilas</option>
+<option value="686" >Paris 4 Quais de Seine Rive Droite</option>
+<option value="206" >Piemont Bischoffsheim</option>
+<option value="359" >Poitiers CAP SUD</option>
+<option value="654" >Poitiers Collinot</option>
+<option value="475" >Poitiers Les Ecossais</option>
+<option value="79" >Puteaux Forme</option>
+<option value="91" >Puteaux La Défense</option>
+<option value="645" >Reims Croix Rouge</option>
+<option value="669" >Reims Docteur Roux</option>
+<option value="536" >Reims Goulin</option>
+<option value="664" >Reims Jean Moulin</option>
+<option value="674" >Reims Quartier Libre</option>
+<option value="572" >Rennes 2 rives</option>
+<option value="527" >Rennes Carpantier</option>
+<option value="369" >Rennes Delaunay</option>
+<option value="584" >Rennes Jean Prouff</option>
+<option value="296" >Rennes Jules Isaac</option>
+<option value="526" >Rennes MQ Villejean</option>
+<option value="617" >Rennes St Vincent</option>
+<option value="283" >Rennes Villeneuve</option>
+<option value="534" >Saint Denis Maurice Baquet</option>
+<option value="634" >Saint Denis Pleyel</option>
+<option value="345" >Saint Malo Amélie Fristel</option>
+<option value="640" >Saint Malo Centre Allende</option>
+<option value="636" >Saint Malo Jean de la Mennais</option>
+<option value="277" >Saint Malo la Barbinais</option>
+<option value="341" >Saint Malo la Découverte</option>
+<option value="419" >Saint Malo La Gentillerie</option>
+<option value="420" >Saint Malo Trianon</option>
+<option value="595" >Saint Ouen Alliance</option>
+<option value="632" >Saint Ouen Mains d'oeuvres</option>
+<option value="635" >Saint Ouen Pompiers</option>
+<option value="568" >Strasbourg Block'Out</option>
+<option value="168" >Strasbourg Bon Pasteur</option>
+<option value="203" >Strasbourg Freefitness</option>
+<option value="142" >Strasbourg Lucie Berger</option>
+<option value="123" >Strasbourg Neudorf</option>
+<option value="2" >Strasbourg Neufeld</option>
+<option value="677" >Strasbourg One fitness club</option>
+<option value="652" >Strasbourg Rowing Club</option>
+<option value="354" >Strasbourg Saint Joseph</option>
+<option value="30" >Suresnes Cottages</option>
+<option value="642" >Toulouse Acacias</option>
+<option value="127" >Toulouse Dojo Tonic</option>
+<option value="574" >Toulouse Espace Allegria</option>
+<option value="115" >Toulouse La Maquina Tanguera</option>
+<option value="446" >Toulouse Lycée Jasmin</option>
+<option value="126" >Toulouse Piscine Bellevue</option>
+<option value="289" >Toulouse Piscine Léo Lagrange</option>
+<option value="630" >Versailles Condamines</option>
+<option value="629" >Versailles Escrime</option>
+<option value="631" >Versailles Perrault</option>
+<option value="581" >Versailles Pompier</option>
+<option value="628" >Versailles Pougault</option>
+<option value="67" >Versailles Quintinie</option>
+<option value="192" >Versailles Tharaud</option>
+<option value="44" >Villeurbanne Desmaé</option>
+<option value="75" >Vincennes Alemana</option>
+<option value="667" >Vincennes Maison des Associations</option>
+</select>
+</li><li><input type="checkbox"  onclick="this.form.submit()"  name="class_search_booking" value="yes" style="border: none; margin:0; padding:0;" /> <label for="cours75"><img src="https://design.gymsuedoise.com/USER20170406/img/picto-resa.png" alt=""> Uniquement par r&eacute;servation</label></li><li><input type="checkbox"  onclick="this.form.submit()"  name="class_search_classroom_outdoor" value="yes" style="border: none; margin:0; padding:0;" /> <label for="cours75"><img src="https://design.gymsuedoise.com/USER20170406/img/picto-outdoor.png" alt=""> Uniquement en plein air</label></li></ul><ul class="list-links fourth-column"><li><a href="https://www.gymsuedoise.com/loc/rs/">Voir toutes les salles</a></li></ul></form></div></div><div class="schedule-header"><h2>Horaires du mardi 18 avril 2017</h2></div><br/><div class="schedule"><table cellpadding="0" cellspacing="0"><thead><tr><th>Date &amp; heure</th><th>Salle</th><th>Intensit&eacute;</th><th>Animateur</th><th>H&ocirc;te</th><th>Forfaits</th><th>Infos</th></tr></thead><tbody>
+<tr class=" even  "><td class="time innertip tip-info">Mardi 12:30<span class="hidden tip-content"><h2><img src="https://design.gymsuedoise.com/USER20170406/img/picto-info-bleu.png" alt=""> Information Salle</h2><strong>Paris 10 Chaudron</strong><br><p>Attention, pour raison de jour férié, le cours de 20h en Lilla est annulé. L'ensemble des autres cours de la journée est maintenu.</p></span></td><td class="place"><span class="place-indoor"><a href="https://www.gymsuedoise.com/loc/dt/?id=349">Paris 10 Chaudron</a><br>Stora</span></td><td class="intensity"><ul class="course-details"><li class="course-duration">60 mn</li><li class="course-difficulty"><a href="https://www.gymsuedoise.com/level/?slide=46"><img src="https://design.gymsuedoise.com/USER20170406/classlevel/level_cardiopush.png" alt="Cardio Pump" title="Cardio Pump"/>  Cardio Pump</a></li></ul></td><td class="teacher"><a href="https://www.gymsuedoise.com/member/dt/?id=291">Jérémie L</a></td><td class="host"><a href="https://www.gymsuedoise.com/member/dt/?id=2002">Magali F</a><br/><a href="https://www.gymsuedoise.com/member/dt/?id=1565">Yàn Painter</a></td><td class="rates"><a href="https://www.gymsuedoise.com/pass/li/"><img src="https://design.gymsuedoise.com/USER20170406/pass/color_topp.gif" alt="TOPP" title="TOPP"  style="margin-right:2px;"  /></a></td><td class="details"><a href="https://www.gymsuedoise.com/cours/detail/?id=351468">En d&eacute;tail</a><a class="resa-off-btn" title="La r&eacute;servation n'est possible que le jour m&ecirc;me du cours" href="https://www.gymsuedoise.com/resa/te/">RESA</a></td></tr>
+<tr class=" odd  "><td class="time innertip tip-info">Mardi 19:30<span class="hidden tip-content"><h2><img src="https://design.gymsuedoise.com/USER20170406/img/picto-info-bleu.png" alt=""> Information Salle</h2><strong>Paris 10 Chaudron</strong><br><p>Attention, pour raison de jour férié, le cours de 20h en Lilla est annulé. L'ensemble des autres cours de la journée est maintenu.</p></span><br/><span class="precision">Souvent complet</span></td><td class="place"><span class="place-indoor"><a href="https://www.gymsuedoise.com/loc/dt/?id=349">Paris 10 Chaudron</a><br>Stora</span></td><td class="intensity"><ul class="course-details"><li class="course-duration">60 mn</li><li class="course-difficulty"><a href="https://www.gymsuedoise.com/level/?slide=46"><img src="https://design.gymsuedoise.com/USER20170406/classlevel/level_cardiopush.png" alt="Cardio Pump" title="Cardio Pump"/>  Cardio Pump</a></li></ul></td><td class="teacher"><a href="https://www.gymsuedoise.com/member/dt/?id=456">Romain B</a></td><td class="host"><a href="https://www.gymsuedoise.com/member/dt/?id=1940">Anne Elisabeth</a><br/><a href="https://www.gymsuedoise.com/member/dt/?id=1234">Mathilde R</a></td><td class="rates"><a href="https://www.gymsuedoise.com/pass/li/"><img src="https://design.gymsuedoise.com/USER20170406/pass/color_topp.gif" alt="TOPP" title="TOPP"  style="margin-right:2px;"  /></a></td><td class="details"><a href="https://www.gymsuedoise.com/cours/detail/?id=363837">En d&eacute;tail</a><a class="resa-off-btn" title="La r&eacute;servation n'est possible que le jour m&ecirc;me du cours" href="https://www.gymsuedoise.com/resa/te/">RESA</a></td></tr></tbody></table></div>
+<br/></div> <!-- END main-content -->
+
+<div class="SF201607-Footer__container sf-Background__one"><footer class="sf-Footer">
+<h2 class="sf-Footer__title--white">la gym suédoise</h2>
+<p class="sf-Footer__text--white">La <a class="sf-Footer__link" href="https://www.gymsuedoise.com/content/display/?t=30">Gym Su&eacute;doise</a>, la Gym pour tous : d&eacute;couvrez nos <a class="sf-Footer__link" href="https://www.gymsuedoise.com/cours/list/">cours</a>, nos <a class="sf-Footer__link" href="https://www.gymsuedoise.com/loc/li/">salles</a> et nos <a class="sf-Footer__link" href="https://www.gymsuedoise.com/content/display/?t=80">intensit&eacute;s</a>.</p>
+<p class="sf-Footer__phoneNumber">01 45 00 18 22</p><p class="sf-Footer__container--link"><a class="sf-Footer__link sf-uppercase" href="https://www.gymsuedoise.com/content/display/?t=140">Mentions l&eacute;gales</a> / <a class="sf-Footer__link sf-uppercase" href="https://www.gymsuedoise.com/content/display/?t=130">CGU</a> / <a class="sf-Footer__link sf-uppercase" href="https://www.gymsuedoise.com/content/display/?t=170" >CGV</a></p><p class="sf-Footer__text--lightBlue">Copyright © 1993-2017 La Gym Su&eacute;doise®&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;&nbsp;VR1771 (2017-04-01) - 0,03s - P21S44</p><p class="sf-Footer__text--lightBlue">La Gym Su&eacute;doise, sport complet, id&eacute;al pour se d&eacute;penser et pour de la <a class="sf-Footer__link--light" href="https://www.gymsuedoise.com/event/remise-en-forme/">remise en forme</a>. Adapt&eacute;e &agrave; tous avec <a class="sf-Footer__link--light" href="https://www.gymsuedoise.com/content/display/?t=80">15 intensit&eacute;s diff&eacute;rentes</a>, une multitude de <a class="sf-Footer__link--light" href="https://www.gymsuedoise.com/loc/mpl/">salles</a> et des <a class="sf-Footer__link--light" href="https://www.gymsuedoise.com/member/list/?accountdisplayrole=40">animateurs motiv&eacute;s</a> &agrave; votre &eacute;coute. <a class="sf-Footer__link--light" href="https://www.gymsuedoise.com/event/salles-sports-paris/">Salles de sport &agrave; Paris</a>, Cours de <a class="sf-Footer__link--light" href="https://www.gymsuedoise.com/event/cours-gym-marseille/">Gym &agrave; Marseille</a>, <a class="sf-Footer__link--light" href="https://www.gymsuedoise.com/event/fitness-boulogne/">Fitness à Boulogne</a> ou &agrave; <a class="sf-Footer__link--light" href="http://www.swedishfit.com">l'&eacute;tranger</a>, o&ugrave; que vous soyez, pratiquez un sport <a class="sf-Footer__link--light" href="https://www.gymsuedoise.com/event/sport-accessible-pas-cher/">accessible et pas cher</a>.</p></footer></div><script src="https://design.gymsuedoise.com/USER20170406/js/app.js"></script>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"b841c318da","applicationID":"45865848","transactionName":"Z1NUNkFTD0ZWUkBfC14ZYxBaHQhbU1RMGBRYRg==","queueTime":0,"applicationTime":23,"atts":"SxRXQAlJHEg=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>
+
+
+Use link below to reserve
+<br>
+https://www.gymsuedoise.com/resa/bk/?id=363837
+<br>
+Use link above to reserve
+<br>
+[3]---------------------------------------------------------------------------
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv= "Content-Type" content="text/html;charset=UTF-8" />
+<meta name="Copyright" content="La Gym Su&eacute;doise (c) 2017" />
+<meta name="Publisher" content="La Gym Su&eacute;doise" />
+<meta name="language-v" content="french" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1026.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="google-site-verification" content="cvutRYU-r30L5p5TDsH77fFimrHcDRAnqkpeAAfadno">
+<link rel="Shortcut Icon" type="image/gif" href="https://design.gymsuedoise.com/USER20170406/favicon.gif" />
+<link rel="apple-touch-icon" href="https://design.gymsuedoise.com/USER20170406/apple-touch-icon.png" />
+<link rel="apple-touch-icon" sizes="57x57" href="https://design.gymsuedoise.com/USER20170406/apple-touch-icon-57x57.png" />
+<link rel="apple-touch-icon" sizes="72x72" href="https://design.gymsuedoise.com/USER20170406/apple-touch-icon-72x72.png" />
+<link rel="apple-touch-icon" sizes="114x114" href="https://design.gymsuedoise.com/USER20170406/apple-touch-icon-114x114.png" />
+<link rel="alternate" href="www.gymsuedoise.com" hreflang="fr-FR" />
+<link rel="stylesheet" href="https://design.gymsuedoise.com/USER20170406/css/user.css"><script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o), m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m) })(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create', 'UA-45247463-1', 'gymsuedoise.com');ga('require', 'displayfeatures');ga('send', 'pageview');
+</script>
+
+
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-PR8ZNF" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-PR8ZNF');</script>
+
+<title>Mon compte Gym Su&eacute;doise</title>
+<meta name="description" content="Identifiez-vous &agrave; votre compte personnel de la Gym Su&eacute;doise, g&eacute;rez votre compte, vos r&eacute;servations &agrave; vos cours de sport�">
+</head>
+<body>
+<noscript><div id="nojserror"><p>Your browser doesn't support javascript or javascript is not activated.</p><p>This site requires javascript to display properly. We recommend to activate javascript or use an other browser.</p><p>We recommend to use the open source browser Firefox available here:</p><p><a href="http://www.mozilla.org"><img src="https://design.gymsuedoise.com/USER20170406/firefox.png" alt="firefox" /><br/>Get Firefox</a></p></div></noscript>
+
+
+<!-- Login dialog -->
+<div class="SF201607-DialogBox__overlay js-boxOverlay"><div class="sf-DialogBox__bg js-boxBg"><div class="sf-DialogBox__container"><div class="js-loginBox"><p class="sf-DialogBox__title al-center">s'identifier</p><p class="sf-DialogBox__subTitle al-center l-spacing-sm">Vous avez déjà un compte</p><form class="sf-LogBox__form" action="https://www.gymsuedoise.com/lo/?u=a743" method="post"><input class="sf-LogBox__checkboxBtn" type="checkbox" name="ks" id="stayLogged"><label class="sf-LogBox__checkboxLabel" for="stayLogged"></label><span class="sf-LogBox__checkboxText">Rester connecté</span><input class="sf-LogBox__input" type="text" placeholder="Email" required="true" name="em"><input class="sf-LogBox__input" type="password" placeholder="Mot de passe" required="true" name="pw"><input class="sf-LogBox__submit" type="submit"><p class="al-right"><a class="sf-LogBox-resetPwd l-spacing-sm js-forgotPwd" href="#">Mot de passe oublié ?</a></p><p class="al-center"><a class="sf-Btn sf-Btn--md sf-Btn--outline sf-Btn--white" href="https://www.gymsuedoise.com/account/cr/?u=a743">créer un compte</a></p></form></div><div class="js-resetPwdBox"><p class="sf-DialogBox__title al-center">s'identifier</p><p class="sf-DialogBox__subTitle al-center l-spacing-sm">J'ai perdu/oublié mon mot de passe</p><a class="sf-Btn--back js-backBtn" href="#"></a><p class="sf-DialogBox__text al-center l-spacing-sm">Pour recevoir votre mot de passe par mail, veuillez saisir l'adresse email de votre compte</p><form class="sf-ResetPwdBox__form" action="https://www.gymsuedoise.com/account/lp2/?u=a743" method="post"><input class="sf-LogBox__input" type="text" placeholder="Email" required="true" name="em"><input class="sf-ResetPwd__submit" type="submit"></form></div></div></div></div>
+
+
+<!-- Header -->
+<div class="SF201607-Header__container"><header class="sf-Header"><a class="sf-BtnHeader js-BtnLogin" href="#">s'identifier</a><div class="sf-Header__logoGS"><a class="sf-Header__link--logo" href="https://www.gymsuedoise.com/?u=a743" title="La Gym Suédoise"></a></div><nav class="sf-NavBar">
+
+
+<!-- Navigation menu -->
+<ul class="sf-NavBar__group"><li class="sf-NavBar__item--first"><a class="sf-NavBar__link--first" href="https://www.gymsuedoise.com/content/display/?t=30&amp;u=a743">la Gym Suédoise</a></li><li class="sf-NavBar__item"><a class="sf-NavBar__link" href="https://www.gymsuedoise.com/content/display/?t=30&amp;u=a743" >Un sport sant&eacute;</a></li><li class="sf-NavBar__item"><hr class="sf-NavBar__item__border"><a class="sf-NavBar__link" href="https://www.gymsuedoise.com/content/display/?t=40&amp;u=a743" >Qui sommes-nous ?</a></li><li class="sf-NavBar__item"><hr class="sf-NavBar__item__border"><a class="sf-NavBar__link" href="https://www.gymsuedoise.com/event/?u=a743" >Nos actualit&eacute;s</a></li><li class="sf-NavBar__item"><hr class="sf-NavBar__item__border"><a class="sf-NavBar__link" href="https://www.gymsuedoise.com/content/rpdisplay/?u=a743" >Revue de presse</a></li><li class="sf-NavBar__item"><hr class="sf-NavBar__item__border"><a class="sf-NavBar__link" href="https://www.gymsuedoise.com/member/list/?accountdisplayrole=-1&amp;u=a743" >L'&eacute;quipe</a></li><li class="sf-NavBar__item"><hr class="sf-NavBar__item__border"><a class="sf-NavBar__link" href="https://www.gymsuedoise.com/content/display/?t=76&amp;u=a743" >Se former</a></li><li class="sf-NavBar__item"><hr class="sf-NavBar__item__border"><a class="sf-NavBar__link" href="https://www.gymsuedoise.com/content/display/?t=77&amp;u=a743" >Nous rejoindre</a></li><li class="sf-NavBar__item"><hr class="sf-NavBar__item__border"><a class="sf-NavBar__link" href="https://www.gymsuedoise.com/content/display/?t=79&amp;u=a743" >Nos partenaires</a></li></ul>
+<ul class="sf-NavBar__group sf-NavBar__group--2">
+<li class="sf-NavBar__item--first"><a class="sf-NavBar__link--first" href="https://www.gymsuedoise.com/cours/list/?u=a743">Le planning</a></li><li class="sf-NavBar__item"><a class="sf-NavBar__link"  href="https://www.gymsuedoise.com/cours/list/?u=a743" >Horaires</a></li><li class="sf-NavBar__item"><hr class="sf-NavBar__item__border"><a class="sf-NavBar__link"  href="https://www.gymsuedoise.com/loc/li/?u=a743" >Salles</a></li><li class="sf-NavBar__item"><hr class="sf-NavBar__item__border"><a class="sf-NavBar__link"  href="https://www.gymsuedoise.com/content/display/?t=80&amp;u=a743" >Intensit&eacute;s</a></li></ul>
+<ul class="sf-NavBar__group sf-NavBar__group--3">
+<li class="sf-NavBar__item--first"><a class="sf-NavBar__link--first" href="https://www.gymsuedoise.com/content/display/?t=890&amp;u=a743">Participer</a></li><li class="sf-NavBar__item"><a class="sf-NavBar__link" href="https://www.gymsuedoise.com/content/display/?t=890&amp;u=a743" >Comment participer</a></li><li class="sf-NavBar__item"><hr class="sf-NavBar__item__border"><a class="sf-NavBar__link" href="https://www.gymsuedoise.com/pass/li/?u=a743" >Notre offre</a></li><li class="sf-NavBar__item"><hr class="sf-NavBar__item__border"><a class="sf-NavBar__link" href="https://www.gymsuedoise.com/content/display/?t=78&amp;u=a743" >Cartes cadeaux</a></li><li class="sf-NavBar__item"><hr class="sf-NavBar__item__border"><a class="sf-NavBar__link" href="https://www.gymsuedoise.com/content/display/?t=100&amp;u=a743" >Cours gratuits</a></li><li class="sf-NavBar__item"><hr class="sf-NavBar__item__border"><a class="sf-NavBar__link" href="https://www.gymsuedoise.com/content/display/?t=95&amp;u=a743" >Offre CE</a></li></ul>
+<ul class="sf-NavBar__group sf-NavBar__group--4">
+<li class="sf-NavBar__item--first"><a class="sf-NavBar__link--first" href="https://www.gymsuedoise.com/content/display/?t=111&amp;u=a743">Questions</a></li><li class="sf-NavBar__item"><a class="sf-NavBar__link" href="https://www.gymsuedoise.com/content/display/?t=111&amp;u=a743" >Nos r&eacute;ponses</a></li><li class="sf-NavBar__item"><hr class="sf-NavBar__item__border"><a class="sf-NavBar__link" href="https://www.gymsuedoise.com/content/display/?t=120&amp;u=a743" >Nous contacter</a></li></ul>
+<div class="sf-NavBar__tools__wrapper">
+
+<!-- SEARCH BOX -->
+<div class="sf-NavBar__search" style="width: 32px;"><a id="quick-search__open" href="javascript:void(0);" title="Rechercher" style="display: block;"></a><form method="post" action="https://www.gymsuedoise.com/search/s/?u=a743"><div><input type="hidden" name="sv" value="searchhv"><input type="text" id="quick-search__input" placeholder="Rechercher" name="sc" ><input type="submit" id="quick-search__submit" value="Lancer la recherche" ></div></form></div><a class="sf-Btn__subscribe" href="https://www.gymsuedoise.com/pass/li/?u=a743" title="D&eacute;couvrir nos offres" style="display: block;">je m'abonne</a></div>
+</nav></header></div>
+
+<div id="main-content">
+
+<div class="msg-box msg-ack"><p><span></span>Vous vous &ecirc;tes d&eacute;connect&eacute; de votre compte.</p></div>
+<h1 class="sf-ClientRoute__title">s<strong>'identifier</strong></h1><div class="sf-LoginBox__container"><div class="sf-LoginBox__left"><h2 class="sf-DialogBox__subTitle al-center l-spacing-sm">Vous avez d&eacute;j&agrave; un compte</h2><form class="sf-LogBox__form" action="https://www.gymsuedoise.com/lo/?u=a743" method="post"><input class="sf-LogBox__checkboxBtn" type="checkbox" name="ks" id="stayLogged-2"><label class="sf-LogBox__checkboxLabel" for="stayLogged-2"></label><span class="sf-LogBox__checkboxText">Rester connect&eacute;</span><input class="sf-LogBox__input" type="text" placeholder="Email" required="true" name="em"><input class="sf-LogBox__input" type="password" placeholder="Mot de passe" required="true" name="pw"><input class="sf-LogBox__submit" type="submit"><p class="al-right"><a class="sf-LogBox-resetPwd l-spacing-sm js-forgotPwd" href="#">Mot de passe oubli&eacute; ?</a></p></form></div><div class="sf-LoginBox__right"><h2 class="sf-DialogBox__subTitle al-center l-spacing-sm">Vous n'avez pas de compte ?</h2><p class="sf-Text__md__light__white">Cr&eacute;ez votre compte en quelques clics !<br>Il vous sera utile pour commander et payer<br>votre forfait en ligne, r&eacute;server un cours,<br>modifier vos informations personnelles, etc.</p><a class="sf-Btn sf-Btn--md sf-Btn--white" href="https://www.gymsuedoise.com/account/cr/?u=a743">cr&eacute;er un compte</a></p></div></div><div class="sf-ClientRoute__footerContainer sf-Background__wood"><a href="https://www.gymsuedoise.com/content/display/?t=80&amp;u=a743" title="D&eacute;couvrez nos intensit&eacute;s"><div class="sf-ClientRoute__footerLink"><h3 class="sf-ClientRoute__footerTitle">intensit&eacute;s<sub class="sf-ClientRoute__text">Trouvez votre bonheur</sub></h3><i class="sf-runnning_man"></i></div></a><a href="https://www.gymsuedoise.com/cours/list/?u=a743" title="D&eacute;couvrez notre planning"><div class="sf-ClientRoute__footerLink"><h3 class="sf-ClientRoute__footerTitle">planning<sub class="sf-ClientRoute__text">vite un cours</sub></h3><i class="sf-schedule_clock"></i></div></a><a href="https://www.gymsuedoise.com/content/display/?t=105&amp;u=a743" title="Plus d'informations sur l'option r&eacute;servation"><div class="sf-ClientRoute__footerLink"><h3 class="sf-ClientRoute__footerTitle">l'option r&eacute;servation<sub class="sf-ClientRoute__text">pour r&eacute;server votre place</sub></h3><i class="sf-schedule_check"></i></div></a></div></div> <!-- END main-content -->
+
+<div class="SF201607-Footer__container sf-Background__one"><footer class="sf-Footer">
+<h2 class="sf-Footer__title--white">la gym suédoise</h2>
+<p class="sf-Footer__text--white">La <a class="sf-Footer__link" href="https://www.gymsuedoise.com/content/display/?t=30&amp;u=a743">Gym Su&eacute;doise</a>, la Gym pour tous : d&eacute;couvrez nos <a class="sf-Footer__link" href="https://www.gymsuedoise.com/cours/list/?u=a743">cours</a>, nos <a class="sf-Footer__link" href="https://www.gymsuedoise.com/loc/li/?u=a743">salles</a> et nos <a class="sf-Footer__link" href="https://www.gymsuedoise.com/content/display/?t=80&amp;u=a743">intensit&eacute;s</a>.</p>
+<p class="sf-Footer__phoneNumber">01 45 00 18 22</p><p class="sf-Footer__container--link"><a class="sf-Footer__link sf-uppercase" href="https://www.gymsuedoise.com/content/display/?t=140&amp;u=a743">Mentions l&eacute;gales</a> / <a class="sf-Footer__link sf-uppercase" href="https://www.gymsuedoise.com/content/display/?t=130&amp;u=a743">CGU</a> / <a class="sf-Footer__link sf-uppercase" href="https://www.gymsuedoise.com/content/display/?t=170&amp;u=a743" >CGV</a></p><p class="sf-Footer__text--lightBlue">Copyright © 1993-2017 La Gym Su&eacute;doise®&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;&nbsp;VR1771 (2017-04-01) - 0,01s - P2S46</p><p class="sf-Footer__text--lightBlue">La Gym Su&eacute;doise, sport complet, id&eacute;al pour se d&eacute;penser et pour de la <a class="sf-Footer__link--light" href="https://www.gymsuedoise.com/event/remise-en-forme/?u=a743">remise en forme</a>. Adapt&eacute;e &agrave; tous avec <a class="sf-Footer__link--light" href="https://www.gymsuedoise.com/content/display/?t=80&amp;u=a743">15 intensit&eacute;s diff&eacute;rentes</a>, une multitude de <a class="sf-Footer__link--light" href="https://www.gymsuedoise.com/loc/mpl/?u=a743">salles</a> et des <a class="sf-Footer__link--light" href="https://www.gymsuedoise.com/member/list/?accountdisplayrole=40&amp;u=a743">animateurs motiv&eacute;s</a> &agrave; votre &eacute;coute. <a class="sf-Footer__link--light" href="https://www.gymsuedoise.com/event/salles-sports-paris/?u=a743">Salles de sport &agrave; Paris</a>, Cours de <a class="sf-Footer__link--light" href="https://www.gymsuedoise.com/event/cours-gym-marseille/?u=a743">Gym &agrave; Marseille</a>, <a class="sf-Footer__link--light" href="https://www.gymsuedoise.com/event/fitness-boulogne/?u=a743">Fitness à Boulogne</a> ou &agrave; <a class="sf-Footer__link--light" href="http://www.swedishfit.com">l'&eacute;tranger</a>, o&ugrave; que vous soyez, pratiquez un sport <a class="sf-Footer__link--light" href="https://www.gymsuedoise.com/event/sport-accessible-pas-cher/?u=a743">accessible et pas cher</a>.</p></footer></div><script src="https://design.gymsuedoise.com/USER20170406/js/app.js"></script>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"b841c318da","applicationID":"45865848","transactionName":"Z1NUNkFTD0ZWUkBfC14ZYxBaHQhbU1RMGBRYRg==","queueTime":0,"applicationTime":5,"atts":"SxRXQAlJHEg=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>
+
