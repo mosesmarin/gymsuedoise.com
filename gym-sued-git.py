@@ -23,7 +23,6 @@ base_link_reserve='https://www.gymsuedoise.com/resa/bk/?id='
 logon_link='https://www.gymsuedoise.com/lo/'
 logout_link='https://www.gymsuedoise.com/lt/'
 search_course_link='https://www.gymsuedoise.com/cours/list/'
-time_of_class='19:30'
 
 # Define user values
 credentials = { 'em': 'e-mail@gmail.com', 'pw': 'password' } 
@@ -35,13 +34,19 @@ my_date = date.today()+ timedelta(days=offset)
 date_value= calendar.day_name[my_date.weekday()]
 if date_value=='Monday':
     day_of_class=day_mardi
+    time_of_class='19:30'
 elif date_value=='Wednesday':
     day_of_class=day_jeudi
+    time_of_class='19:30'
+elif date_value=='Friday':
+    day_of_class=day_samedi
+    time_of_class='10:00'
 else:
     day_of_class=0
+    time_of_class='00:00'
 
 
-if ( date_value=='Monday' or date_value=='Wednesday' ):    
+if ( date_value=='Monday' or date_value=='Wednesday' or date_value=='Friday' ):    
     #log in, find id, reserve, log out 
     with requests.Session() as s:
         #login	
