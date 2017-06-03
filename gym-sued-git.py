@@ -1,3 +1,4 @@
+
 # gym-sued.py
 # Author: Moises Marin
 # Date: April 14, 2017
@@ -40,7 +41,7 @@ def lambda_handler(event, context):
 
     # Define user values
     credentials = { 'em': 'e-mail', 'pw': 'password' } 
-    user_search_id=165233376
+    user_search_id=88888888
     
     #Define vars for SNS message
     text_reserve=''
@@ -163,4 +164,3 @@ def lambda_handler(event, context):
     #time_indicator=time.strftime("%d/%m/%Y %H:%M:%S")
 
     return link_reserve
-    
