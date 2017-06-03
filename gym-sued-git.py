@@ -33,7 +33,9 @@ def lambda_handler(event, context):
     search_course_link='https://www.gymsuedoise.com/cours/list/'
 
     # Define user values
-    credentials = { 'em': 'user', 'pw': 'pass' } 
+
+    credentials = { 'em': 'e-mail', 'pw': 'password' } 
+
     user_search_id=165233376
     
     #Define vars for SNS message
@@ -105,11 +107,7 @@ def lambda_handler(event, context):
             print link_reserve
             print '<br>\nUse link above to reserve\n<br>'
             #text_reserve=p.text
-    
-            #response = client.publish(
-            #TopicArn='arn:aws:sns:us-east-1:707614736550:GymSuedoise-Notifier',
-            #Message='1\n'+link_reserve+'\n'+text_reserve
-            #)
+
                           
 	        #Use link to go to book class page
             print '[2]---------------------------------------------------------------------------'
@@ -145,6 +143,7 @@ def lambda_handler(event, context):
                         time_value=line_56_after[0]
 
             response = client.publish(
+
             TopicArn='arn:aws:sns:us-east-1:888888888888:GymSuedoise-Notifier',
             Message='Reservation for:\n'+date_value+'\n'+time_value
             )
