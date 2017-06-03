@@ -1,14 +1,9 @@
-# gym-sued-git.py
+# gym-sued.py
 # Author: Moises Marin
 # Date: April 14, 2017
 # Purpose: To book a class in a gym website 
 # This script should run at first minute of Tuesday or Thursday at Central European Time
 # It will book a class the same day of it's execution
-##
-#Change log
-#2017-June-03	Moises Marin	Update to work with pop-up to confirm reservation
-#
-
 
 import requests 
 import sys
@@ -38,8 +33,8 @@ def lambda_handler(event, context):
     search_course_link='https://www.gymsuedoise.com/cours/list/'
 
     # Define user values
-    credentials = { 'em': 'user', 'pw': 'password' } 
-    user_search_id=999999999
+    credentials = { 'em': 'user', 'pw': 'pass' } 
+    user_search_id=165233376
     
     #Define vars for SNS message
     text_reserve=''
@@ -85,6 +80,7 @@ def lambda_handler(event, context):
             #login	
             print '[1]---------------------------------------------------------------------------'
             p = s.post(logon_link, data=credentials) 
+            #print p.text
     
             #find id of class
             print '[FINDID]---------------------------------------------------------------------------'
@@ -93,7 +89,7 @@ def lambda_handler(event, context):
                         'class_user_search_recover':user_search_id,
                                'class_search_level':cardio_pump} 
             p = s.post(search_course_link, data=searchload) 
-
+            #print p.text 
             with open("/tmp/Output.txt", "w") as text_file:
                 text_file.write(p.text)
             course_id=''  
@@ -107,13 +103,18 @@ def lambda_handler(event, context):
             link_reserve=base_link_reserve+course_id
             print '\nUse link below to reserve\n<br>'
             print link_reserve
-            print '<br>\nUse link above to reserve\n<br>'    
-
+            print '<br>\nUse link above to reserve\n<br>'
+            #text_reserve=p.text
+    
+            #response = client.publish(
+            #TopicArn='arn:aws:sns:us-east-1:707614736550:GymSuedoise-Notifier',
+            #Message='1\n'+link_reserve+'\n'+text_reserve
+            #)
                           
 	        #Use link to go to book class page
             print '[2]---------------------------------------------------------------------------'
             r = s.get(link_reserve) 
-
+            #print r.text
             with open("/tmp/Output2.txt", "w") as text_file:
                 text_file.write(r.text)
             course_id=''  
@@ -129,19 +130,46 @@ def lambda_handler(event, context):
             print link_reserve
             print '<br>\nUse link above to reserve\n<br>'
             text_reserve=r.text
-    
+            
+            #Fetch confirmation results
+            date_value=''
+            time_value=''
+            with open("/tmp/Output2.txt") as f:
+                for line in f:
+                    if 'cours a bien' in line:
+                        line_56=line.split('<th colspan="6" class="big">' ) 
+                        line_56_after=line_56[1].split('</th></tr></thead><tbody>') 
+                        date_value=line_56_after[0]
+                        line_56=line.split('</td><td><b>' ) 
+                        line_56_after=line_56[1].split('</b></td><td>') 
+                        time_value=line_56_after[0]
+
             response = client.publish(
-            TopicArn='arn:aws:sns:us-east-1:707614736550:GymSuedoise-Notifier',
-            Message='2\n'+link_reserve+'\n'+text_reserve
+            TopicArn='arn:aws:sns:us-east-1:888888888888:GymSuedoise-Notifier',
+            Message='Reservation for:\n'+date_value+'\n'+time_value
             )
 
 
-            #logout
+	        #Reserve a place
             print '[3]---------------------------------------------------------------------------'	
+            #r = s.get(link_reserve) 
+            #print r.text   
+            #text_reserve=r.text
+    
+            #response = client.publish(
+            #TopicArn='arn:aws:sns:us-east-1:707614736550:GymSuedoise-Notifier',
+            #Message='3\n'+link_reserve+'\n'+text_reserve
+            #)
+
+            #logout
+            print '[4]---------------------------------------------------------------------------'	
             r = s.get(logout_link) 
+            #print r.text
     else:
         print 'Don\'t run on ' + date_value
         link_reserve='Don\'t run on ' + date_value
     
+    #time_indicator=time.strftime("%d/%m/%Y %H:%M:%S")
+
     return link_reserve
     
