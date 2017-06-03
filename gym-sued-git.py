@@ -4,6 +4,12 @@
 # Purpose: To book a class in a gym website 
 # This script should run at first minute of Tuesday or Thursday at Central European Time
 # It will book a class the same day of it's execution
+##
+# Change log
+# 2017-Jun-03	Moises	Simplify Notification
+#
+#
+#
 
 import requests 
 import sys
