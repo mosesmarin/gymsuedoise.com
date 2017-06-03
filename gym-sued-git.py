@@ -140,7 +140,7 @@ def lambda_handler(event, context):
                         time_value=line_56_after[0]
 
             response = client.publish(
-            TopicArn='arn:aws:sns:us-east-1:88888888888:GymSuedoise-Notifier',
+            TopicArn='arn:aws:sns:us-east-1:888888888888:GymSuedoise-Notifier',
             Message='Reservation for:\n'+date_value+'\n'+time_value
             )
 
