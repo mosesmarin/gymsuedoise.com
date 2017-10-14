@@ -1,9 +1,16 @@
+
 # gym-sued.py
 # Author: Moises Marin
 # Date: April 14, 2017
 # Purpose: To book a class in a gym website 
 # This script should run at first minute of Tuesday or Thursday at Central European Time
 # It will book a class the same day of it's execution
+##
+# Change log
+# 2017-Jun-03	Moises	Simplify Notification
+#
+#
+#
 
 import requests 
 import sys
@@ -53,6 +60,7 @@ def lambda_handler(event, context):
     # Define user values
     credentials = { 'em': em_env, 'pw': pw_env } 
     user_search_id=user_search_id_env
+
     
     #Define vars for SNS message
     text_reserve=''
@@ -208,4 +216,3 @@ def lambda_handler(event, context):
     #time_indicator=time.strftime("%d/%m/%Y %H:%M:%S")
 
     return link_reserve
-    
